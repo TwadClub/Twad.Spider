@@ -8,4 +8,9 @@
     <Script>D:\Python\Python36-32\Lib\site-packages\scrapy\cmdline.py</Script>
     <Arguments>crawl TwadWeibo</Arguments>
   </StandaloneTarget>
+  <Reports>
+    <Report>
+      <Filename>C:\Users\ay_10\AppData\Local\Temp\cmdline_20180523.vsp</Filename>
+    </Report>
+  </Reports>
 </ProfilingTarget>

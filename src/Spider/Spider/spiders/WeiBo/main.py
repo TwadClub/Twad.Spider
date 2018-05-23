@@ -12,6 +12,6 @@ class Main(scrapy.spiders.Spider):
         html = response.body  # response是获取到的来自网站的返回
         # 以下四行将html存入文件
         filename = "index.html"
-        file = open(filename, "w")
+        file = open(filename, "wb+")
         file.write(html)
         file.close()
