@@ -2,32 +2,29 @@ import pymysql
 from ConntionCreate import ConnectionCreate
 
 class DataSave:
-    def InserWebData(self):
-        ConnectionCreate.netAddress
-        # 打开数据库连接（ip/数据库用户名/登录密码/数据库名）
-        db = pymysql.connect("localhost", "root", "123456789", "twadspiderdata")
-        # 使用 cursor() 方法创建一个游标对象 cursor
-        cursor = db.cursor()
 
-        # SQL 查询语句
-        sql = "SELECT * FROM user"
+    def InserWebData(self,data,url):
+        conntionCreate = ConnectionCreate()
+        db = conntionCreate.MysqlCreate()
+        #创建游标
+        cursor = db.cursor()
+        # SQL
+        sql = r'''INSERT INTO htmldata
+               (Data, Url, CreateDate)
+               VALUES('2323232', '21212', NOW());'''
 
         try:
             # 执行SQL语句
             cursor.execute(sql)
+            db.commit()
             # 获取所有记录列表
-            results = cursor.fetchall()
-            for row in results:
-                id = row[0]
-                name = row[1]
-                # 打印结果
-                print("id=%s,name=%s" % \
-                      (id, name))
-        except:
-            print("Error: unable to fecth data")
-
+        except Exception as e:
+            print(e)
         # 关闭数据库连接
         db.close()
 
-save = DataSave()
-save.InserWebData()
+
+datasave=DataSave()
+datasave.InserWebData("dada","dadada")
+
+

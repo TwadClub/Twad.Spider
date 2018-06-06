@@ -1,13 +1,9 @@
 import pymysql
 
 class ConnectionCreate:
-    netAddress = ""
-
-    def __init__(self):
-        self.netAddress = "localhost"
     def MysqlCreate(self):
         # 打开数据库连接（ip/数据库用户名/登录密码/数据库名）
-        db = pymysql.connect(self.netAddress, "root", "123456789", "twadspiderdata")
+        db = pymysql.connect("localhost", "root", "123456789", "twadspiderdata")
         # 使用 cursor() 方法创建一个游标对象 cursor
         cursor = db.cursor()
 
@@ -17,5 +13,5 @@ class ConnectionCreate:
         data = cursor.fetchone()
         print("Database version : %s " % data)
 
-        # 关闭数据库连接
-        db.close()
+        return db
+
