@@ -1,5 +1,5 @@
 import pymysql
-from ConntionCreate import ConnectionCreate
+from .ConntionCreate import ConnectionCreate
 
 class DataSave:
 
